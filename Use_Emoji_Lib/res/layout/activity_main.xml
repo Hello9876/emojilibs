@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/panel_mainwindow"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    >
+     
+   <ListView
+        android:id="@+id/list_message_box"
+        android:layout_above="@+id/panel_bottombar"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:dividerHeight="4dp"
+        android:divider="@null"
+        android:cacheColorHint="#00000000"
+        android:listSelector="@android:color/transparent" 
+        />
+     <RelativeLayout
+        android:id="@+id/panel_bottombar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" 
+        android:layout_centerVertical="true"
+        >
+		  <Button
+	         android:id="@+id/insert_button"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_alignParentLeft="true"
+	         android:background="@drawable/icon_button_emoji"
+	         android:contentDescription="@string/app_name" 
+	         />	
+
+	   <appx.craft.emoji.uc.EmojiEditText
+	       android:id="@+id/emojiEditText"
+	       android:layout_width="fill_parent"
+	       android:layout_height="wrap_content"
+	       android:layout_centerVertical="true"
+	       android:layout_gravity="bottom"
+	       android:layout_toLeftOf="@+id/add_button"
+	       android:layout_toRightOf="@+id/insert_button"
+	       android:background="@drawable/emojiedittext_background"
+	       android:gravity="center_vertical"
+	       android:paddingLeft="3dp"
+	       android:hint="@string/lbl_your_message"
+	       android:singleLine="false"
+	       android:inputType="textMultiLine"
+	       android:minLines="2"
+	       android:maxHeight="160dp"
+	       />
+
+    	  <Button
+           android:id="@+id/add_button"
+		   android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="bottom"
+           android:layout_alignParentRight="true"
+           android:text="@string/lbl_btn_add"
+           android:contentDescription="@string/app_name" 
+           />
+		       
+       
+	</RelativeLayout>
+    
+  
+
+   
+</RelativeLayout>
