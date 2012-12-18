@@ -117,7 +117,12 @@ public class AdapterMessageList extends BaseAdapter{
 		
 		int colorPos = position % rowColors.length;
 		mCatchView.mCustomTextView.setEmojiText(contentMessArrayList.get(position).getContent());
-		mCatchView.mCustomTextView.setBackgroundColor(rowColors[colorPos]);
+		if(colorPos == 0){
+			mCatchView.mCustomTextView.setBackgroundDrawable(mContext.getResources().getDrawable(R.drawable.black_bubble));	
+		}else{
+			mCatchView.mCustomTextView.setBackgroundDrawable(mContext.getResources().getDrawable(R.drawable.gray_bubble));
+		}
+		
 		
 		return convertView;
 	}
