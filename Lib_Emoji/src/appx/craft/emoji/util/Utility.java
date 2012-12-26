@@ -249,7 +249,6 @@ public class Utility {
 	}
 	
 	
-	
 	/**
 	 * Copy stream.
 	 *
@@ -273,4 +272,31 @@ public class Utility {
         catch(Exception ex){}
     }
 	
+	
+	/**
+	 * From Unicode string to hex value 
+	 * @param inputChar
+	 * @return
+	 */
+	public static String getHexValue(char inputChar) 
+	{
+	 //One character
+	 String strOutput = "";
+     strOutput = Integer.toHexString(inputChar).toUpperCase();
+	 return strOutput;
+	} 
+	
+	/**
+	 * From hex value to Unicode string  
+	 * @param hexValue
+	 * @return
+	 */
+	public static String convertHexValueToString(String hexValue)
+	 { 
+	  char[] emojiChars =
+	Character.toChars(Integer.parseInt(hexValue,16)); 
+	   
+	  String strResult = new String(emojiChars); 
+	  return strResult;
+	 } 
 }
