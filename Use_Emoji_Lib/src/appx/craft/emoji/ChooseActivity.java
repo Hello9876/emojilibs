@@ -41,6 +41,8 @@ public class ChooseActivity extends Activity {
 	/** The Constant TAG_ICONS_ARRAY. */
 	static final String TAG_ICONS_ARRAY = "icons";
 	
+	static final String TAG_HEX_CODE = "hexcode"; 
+	
 	/** The m progress dialog. */
 	ProgressDialog mProgressDialog;
 	
@@ -152,10 +154,11 @@ public class ChooseActivity extends Activity {
 	            	// Storing each json item in variable
 	                String mIconName = mObjectMessage.getString(TAG_EMOJI_UNICODE);
 	                String mID = mObjectMessage.getString(TAG_EMOJI_CATEGORY_ID);
+	                String mHexCode = mObjectMessage.getString(TAG_HEX_CODE);
 	                
 	                mBeanofEmojiIcons.setmTag(mIconName);
 	                mBeanofEmojiIcons.setCategory_id(mID);
-	               
+	                mBeanofEmojiIcons.setHex_code(mHexCode);
 	                
 	                //finally added inside array list 
 	                mBeanofIcons.add(mBeanofEmojiIcons);

@@ -289,17 +289,7 @@ public class MainActivity extends Activity implements OnHeadNavigationSelectedLi
 		}
     }
 
-	/* (non-Javadoc)
-	 * @see appx.craft.emoji.uc.OnHeadNavigationSelectedListener#onButtonSelected(java.lang.String)
-	 */
-	@Override
-	public void onButtonSelected(String id) {
-		emojiEditText.setAddEmojiText(id);
-		if(mPopWindow != null){
-    		mPopWindow.closePopUp();
-		}
-	}
-
+	
 	/**
 	 * The Class RetrieveContent.
 	 */
@@ -467,5 +457,15 @@ public class MainActivity extends Activity implements OnHeadNavigationSelectedLi
 			imm.hideSoftInputFromWindow(editTextTemp.getWindowToken(), 0);
 		}
 	}
+
+	@Override
+	public void onButtonSelected(ImageBean objBean) {
+		emojiEditText.setAddEmojiText(objBean);
+		if(mPopWindow != null){
+    		mPopWindow.closePopUp();
+		}
+
+	}
 	
+
 }

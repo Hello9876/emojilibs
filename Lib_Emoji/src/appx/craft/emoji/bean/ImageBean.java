@@ -17,7 +17,7 @@ public class ImageBean implements Serializable{
 	private String TAG = ImageBean.class.getCanonicalName();
 	
 	/** The icons_tag. */
-	private String category_id,category,icons_tag;
+	private String category_id,category,icons_tag,hex_code;
 	
 	/**
 	 * Gets the category_id.
@@ -74,6 +74,15 @@ public class ImageBean implements Serializable{
 	public void setCaption(String caption) {
 		this.category = caption;
 		Log.debug(TAG,"[ Caption ] " + caption);
+	}
+
+	public String getHex_code() {
+		return hex_code;
+	}
+
+	public void setHex_code(String hex_code) {
+		this.hex_code = hex_code;
+		Log.debug(TAG,"[ hex_code ] " + hex_code);
 	}
 	
 	

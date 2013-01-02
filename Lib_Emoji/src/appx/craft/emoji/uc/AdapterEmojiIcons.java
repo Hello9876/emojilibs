@@ -141,7 +141,7 @@ public class AdapterEmojiIcons extends BaseAdapter{
 				@Override
 				public void onClick(View v) {
 					Log.println("Call Back");
-					mCallback.onButtonSelected(mCategory_one.get(position).getmTag());
+					mCallback.onButtonSelected(mCategory_one.get(position));
 				}
 			});
 	   return mView;

@@ -20,6 +20,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
+import appx.craft.emoji.bean.ImageBean;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -36,6 +37,8 @@ public class EmojiEditText extends EditText implements OnEditorActionListener{
 	/** The icon tag. */
 	String iconTag;
      
+	ImageBean mBenofHex;
+	
 	/**
 	 * Constructor of EmojiEditText version 1.0
 	 *
@@ -78,12 +81,13 @@ public class EmojiEditText extends EditText implements OnEditorActionListener{
 	 *
 	 * @param mIconTag the new adds the emoji text
 	 */
-	public void setAddEmojiText(String mIconTag){
+	public void setAddEmojiText(ImageBean mIconTag){
 		int selectionStart = getSelectionStart();
 		int selectionEnd = getSelectionEnd();
+		mBenofHex = mIconTag;
 		StringBuilder mBuilder = new StringBuilder();
 		mBuilder.append("[");
-		mBuilder.append(mIconTag); // \ue11c
+		mBuilder.append(mBenofHex.getmTag()); 
 		mBuilder.append("]");
 		iconTag = mBuilder.toString();
 		String textToInsert = mBuilder.toString();
@@ -98,7 +102,6 @@ public class EmojiEditText extends EditText implements OnEditorActionListener{
 	public String getEmojiText(){
 		String rexResult=null;
 		try{
-			
 			rexResult = getText().toString();
 			rexResult = rexResult.replace("[","\\u");
 			rexResult = rexResult.replace("]","");
@@ -240,7 +243,7 @@ public class EmojiEditText extends EditText implements OnEditorActionListener{
 
                     if (tag.equals(iconTag)) {
                     	
-                    	int id = getResources().getIdentifier(EmojiUtils.getImageEncodeName(iconTag), "drawable", mContext.getPackageName());
+                    	int id = getResources().getIdentifier(EmojiUtils.getImageEncodeName(mBenofHex.getmTag()), "drawable", mContext.getPackageName());
                     	Drawable iconDrawable = getResources().getDrawable(id);
                     	iconDrawable.setBounds(0, 0, iconDrawable.getIntrinsicWidth(), iconDrawable.getIntrinsicHeight());
                          

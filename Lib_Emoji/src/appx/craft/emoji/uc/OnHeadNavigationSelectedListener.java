@@ -1,5 +1,7 @@
 package appx.craft.emoji.uc;
 
+import appx.craft.emoji.bean.ImageBean;
+
 // TODO: Auto-generated Javadoc
 /**
  * The listener interface for receiving onHeadNavigationSelected events.
@@ -19,5 +21,5 @@ public interface OnHeadNavigationSelectedListener {
   	 *
   	 * @param tag the tag
   	 */
-  	public void onButtonSelected(String tag);
+  	public void onButtonSelected(ImageBean objBean);
 }
